@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: #f2e9e4;
+  padding: 20px;
+}
+
+.edit-wrap {
+  display: flex;
+  justify-content: center;
+  .edit-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.edit__column {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  input {
+    width: calc(100% - 60px);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 10px;
+  }
+  input[type="button"] {
+    width: 100%;
+    color: #c9ada7;
+    background: #22223b;
+    cursor: pointer;
+    &:hover {
+      color: #f2e9e4;
+      background: #4a4e69;
+    }
+  }
+  input[type="date"],
+  input[type="time"] {
+    cursor: pointer;
+    &::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+    }
+  }
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.item-container {
+  width: 300px;
+  display: grid;
+  grid-template-areas:
+    "checkbox item btn-delete"
+    "checkbox datetime btn-delete";
+  grid-template-columns: 40px 1fr 30px;
+  padding-top: 15px;
+  position: relative;
+  &.checked {
+    p {
+      color: gray;
+      text-decoration: line-through;
+    }
+  }
+  &:not(:nth-child(1))::before {
+    content: "";
+    border-top: 1px solid rgba(201, 173, 167, 0.5);
+    width: 280px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+  }
+  p {
+    margin: 0;
+  }
+  .item__checkbox {
+    grid-area: checkbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input[type="checkbox"] {
+      cursor: pointer;
+    }
+  }
+  .item__item {
+    grid-area: item;
+  }
+  .item__datetime {
+    grid-area: datetime;
+    font-size: 12px;
+  }
+  .item__btn-delete {
+    grid-area: btn-delete;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      &:hover {
+        filter: invert(13%) sepia(85%) saturate(6407%) hue-rotate(359deg)
+          brightness(109%) contrast(115%);
+      }
+    }
+  }
+}
+
+.back-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  .back__link {
+    text-decoration: none;
+    background: #c9ada7;
+    color: #000000;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    cursor: pointer;
+    &:hover {
+      background: #4a4e69;
+      color: #f2e9e4;
+    }
+  }
+}
