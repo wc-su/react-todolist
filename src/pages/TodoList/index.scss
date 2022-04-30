@@ -1,6 +1,14 @@
-* {
+textarea, input[type="button"], input[type="date"], input[type="time"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+*, *:before, *:after {
   box-sizing: border-box;
 }
+
 
 body {
   margin: 0;
@@ -47,6 +55,8 @@ body {
   }
   input[type="date"],
   input[type="time"] {
+    min-width: 200px;
+    background: #ffffff;
     cursor: pointer;
     &::-webkit-calendar-picker-indicator {
       cursor: pointer;
