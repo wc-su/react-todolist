@@ -68,7 +68,7 @@ body {
   grid-template-areas:
     "checkbox item btn-delete"
     "checkbox datetime btn-delete";
-  grid-template-columns: 40px 1fr 30px;
+  grid-template-columns: 40px 1fr 25px;
   padding-top: 15px;
   position: relative;
   &.checked {
@@ -110,8 +110,8 @@ body {
     justify-content: center;
     align-items: center;
     img {
-      width: 30px;
-      height: 30px;
+      width: 25px;
+      height: 25px;
       cursor: pointer;
       &:hover {
         filter: invert(13%) sepia(85%) saturate(6407%) hue-rotate(359deg)
