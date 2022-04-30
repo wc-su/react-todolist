@@ -6,8 +6,17 @@ const Edit = ({ add }) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
+  function checkData() {
+    if(note == "") {
+      return false;
+    }
+    return true;
+  }
+
   function addItem() {
-    add((preData) => [{ id: uuidv4(), note, date, time }, ...preData]);
+    if(checkData()) {
+      add((preData) => [{ id: uuidv4(), note, date, time }, ...preData]);
+    }
   }
 
   function changeNote(e) {

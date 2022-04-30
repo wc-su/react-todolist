@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 
-// import deleteIcon from '../images/trash.png';
 import deleteIcon from "../images/delete.png";
 
 const Item = ({ id, note, date, time, deleteData }) => {
