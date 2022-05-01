@@ -1,16 +1,25 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
+import Edit from "./components/Edit.js";
+import List from "./components/List.js";
 
 import "./index.scss";
 
-// import Edit from "./components/Edit.js";
-// import List from "./components/List.js";
-import Home from "./components/Home.js";
+const TodoList = () => {
+  const [data, setData] = useState([]);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+  return (
+    <div className="container">
+      <Edit add={setData} />
+      <List data={data} deleteData={setData} />
+      <div className="back-container">
+        <Link to="/" className="back__link">
+          返回首頁
+        </Link>
+      </div>
+    </div>
+  );
+};
 
-root.render(
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>
-);
+export default TodoList;

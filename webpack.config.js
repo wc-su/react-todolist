@@ -5,10 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   // mode: "production",
   mode: "development",
-  entry: {
-    Home: "./src/pages/Home/index.js",
-    TodoList: "./src/pages/TodoList/index.js",
-  },
+  entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].[contenthash].js",
@@ -44,14 +41,6 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: "index.html",
-      chunks: ["Home"],
-      title: "首頁 - TodoList",
-      template: "./src/index.html",
-    }),
-    new HtmlWebpackPlugin({
-      filename: "todolist.html",
-      chunks: ["TodoList"],
-      title: "功能 - TodoList",
       template: "./src/index.html",
     }),
   ],

@@ -7,14 +7,14 @@ const Edit = ({ add }) => {
   const [time, setTime] = useState("");
 
   function checkData() {
-    if(note == "") {
+    if (note == "") {
       return false;
     }
     return true;
   }
 
   function addItem() {
-    if(checkData()) {
+    if (checkData()) {
       add((preData) => [{ id: uuidv4(), note, date, time }, ...preData]);
     }
   }

@@ -1,11 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { Link } from "react-router-dom";
 
 import "./index.scss";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
+const Home = () => {
+  return (
     <div className="home-container">
       <div className="navbar">
         <a className="title">React 練習專案</a>
@@ -14,10 +13,12 @@ root.render(
         <h1>TodoList</h1>
       </div>
       <div className="start-container">
-        <a className="start__link" href="./todolist.html">
+        <Link to="/list" className="start__link">
           Try it now
-        </a>
+        </Link>
       </div>
     </div>
-  </React.StrictMode>
-);
+  );
+};
+
+export default Home;
