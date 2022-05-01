@@ -7,7 +7,9 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="navbar">
-        <a className="title">React 練習專案</a>
+        <Link to="/" className="title">
+          React 練習專案
+        </Link>
       </div>
       <div className="header">
         <h1>TodoList</h1>
