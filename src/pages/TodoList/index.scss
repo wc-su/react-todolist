@@ -1,14 +1,18 @@
-textarea, input[type="button"], input[type="date"], input[type="time"] {
+textarea,
+input[type="button"],
+input[type="date"],
+input[type="time"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border-radius: 0;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
-
 
 body {
   margin: 0;
