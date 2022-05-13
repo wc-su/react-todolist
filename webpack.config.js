@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   // mode: "production",
@@ -16,6 +17,7 @@ module.exports = {
       directory: path.join(__dirname, ".dist"),
     },
   },
+  devtool: "source-map",
   module: {
     rules: [
       {
@@ -43,5 +45,6 @@ module.exports = {
       filename: "index.html",
       template: "./src/index.html",
     }),
+    new Dotenv(),
   ],
 };

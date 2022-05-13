@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
+
+import { LoadingUpdate } from "../index.js";
+import DB from "./DB.js";
 
 const Edit = ({ add }) => {
   const [note, setNote] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+
+  const changeLoadingText = useContext(LoadingUpdate);
 
   function checkData() {
     if (note == "") {
@@ -15,7 +20,21 @@ const Edit = ({ add }) => {
 
   function addItem() {
     if (checkData()) {
-      add((preData) => [{ id: uuidv4(), note, date, time }, ...preData]);
+      changeLoadingText("新增資料中");
+      const data = {
+        id: uuidv4(),
+        note: note,
+        date: date,
+        time: time,
+        createTime: Date.now(),
+        checked: false,
+      };
+      DB.addData(data).then((result) => {
+        if (result) {
+          add((preData) => [data, ...preData]);
+        }
+        changeLoadingText("");
+      });
     }
   }
 
