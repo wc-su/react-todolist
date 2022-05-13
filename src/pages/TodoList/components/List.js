@@ -2,11 +2,11 @@ import React from "react";
 
 import Item from "./Item.js";
 
-const List = ({ data, deleteData }) => {
+const List = ({ data, setData }) => {
   return (
     <div className="list-container">
       {data.map((item) => {
-        const { id, note, date, time } = item;
+        const { id, note, date, time, checked } = item;
         return (
           <Item
             key={id}
@@ -14,7 +14,8 @@ const List = ({ data, deleteData }) => {
             note={note}
             date={date}
             time={time}
-            deleteData={deleteData}
+            checked={checked}
+            setData={setData}
           />
         );
       })}
