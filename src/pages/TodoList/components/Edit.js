@@ -32,6 +32,9 @@ const Edit = ({ add }) => {
       DB.addData(data).then((result) => {
         if (result) {
           add((preData) => [data, ...preData]);
+          setNote("");
+          setDate("");
+          setTime("");
         }
         changeLoadingText("");
       });
